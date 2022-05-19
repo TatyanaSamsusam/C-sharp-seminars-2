@@ -9,7 +9,7 @@ int num = int.Parse(Console.ReadLine());
 int FindSum(int number)
 {
     int sum = 0;
-    for (int i = 1; i <= num; i++)
+    for (int i = 1; i <= number; i++)
     {
         sum = sum + i;
     }
