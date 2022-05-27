@@ -2,7 +2,7 @@
 [1 2 3 4 5] -> 5 8 3
 [6 7 3 6] -> 36 21*/
 
-int[] array = new int[6];
+int[] array = new int[5];
 var NewRnd = new Random();
 
 for (int i = 0; i < array.Length; i++)
@@ -12,10 +12,18 @@ for (int i = 0; i < array.Length; i++)
 }
 Console.WriteLine();
 
-int[] newArray = new int[array.Length / 2]; 
-for (int i = 0; i < newArray.Length; i++)
+int[] newArray = new int[array.Length / 2 +1]; 
+for (int i = 0; i <= array.Length/2; i++)
 {
-    newArray[i] = array[i] * array[array.Length -1-i];
-    Console.Write(newArray[i] + " ");
-}
+    if (i == array.Length / 2) 
+    {
+        newArray[i] = array[i]; 
+        Console.Write(newArray[i] + " ");
+    }
 
+    else 
+    {
+        newArray[i] = array[i] * array[(array.Length -1)-i];
+        Console.Write(newArray[i] + " ");
+    }
+}
