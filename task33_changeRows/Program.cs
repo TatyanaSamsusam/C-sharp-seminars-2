@@ -29,17 +29,17 @@ void PrintArray (int[,] array)
 
 int[,] Replace (int[,] array)
 {
-    int n = array.GetLength(0) - 1;
-    for (int i = 0; i < array.GetLength(1); i++)          //цикл проходит только по столбцам
+    int n = array.GetLength(0) - 1;                       // в n в n помещается значение колличества строк в массиве -1. из-за того, что индекс с 0, там будет значение последней строки. 
+    for (int i = 0; i < array.GetLength(1); i++)          
     {
-        int temp = array[0,i];                            // загнали в temp значение первой строки
-        array[0,i] = array[n,i];                          // загнали в первую строку значение последней строки
-        array[n,i] = temp;                                // загнали в последнюю строку значение 1 строки, хранящееся в temp
+        int temp = array[0,i];                            // загнали в temp значение первого элемента первой строки
+        array[0,i] = array[n,i];                          // загнали в первый элемент первой строки значение первого элемента последней строки
+        array[n,i] = temp;                                // загнали в первый элемент последней строки значение, хранящееся в temp
     }
     return array;
 }
 
-int [,] arr = GetArray(3,3);
+int [,] arr = GetArray(4,5);
 PrintArray(arr);
 Console.WriteLine();
 int [,] temporArr = Replace(arr);
